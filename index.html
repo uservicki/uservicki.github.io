@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+    #lblHello {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <h2>Bem-vindo(a)! Digite seu nome:</h2>
+      <label for="txtNome">Nome:</label>
+      <input type="text" id="txtNome" class="form-control" placeholder="Digite seu nome" />
+      <br />
+      <input type="button" id="btnHello" class="btn btn-primary" onclick="myFunction()" value="Dizer Olá" />
+    </form>
+
+    <hr />
+    <div id="lblHello" class="text-success"></div>
+  </div>
+
+  <script>
+    function myFunction() {
+      const nome = $("#txtNome").val().trim();
+      if (nome) {
+        document.getElementById("lblHello").innerHTML = `Olá, ${nome}! Seja bem-vindo(a)!`;
+      } else {
+        document.getElementById("lblHello").innerHTML = "Por favor, digite seu nome.";
+      }
+    }
+  </script>
+</body>
+</html>
